@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { render } from "react-dom";
+import ReactDOM from "react-dom";
 
 class App extends Component {
   constructor(props) {
@@ -13,17 +13,22 @@ class App extends Component {
   // it will create a new Item for that
   postMethod() {
     console.log("DENEMEEE");
-    // document.getElementById("#postbtn").addEventListener("click", function () {
-    //   console.log(document.getElementById("#toDo").value);
-    // });
+    document.getElementById("#postbtn").addEventListener("click", function () {
+      console.log(document.getElementById("#toDo").value);
+    });
   }
 
   render() {
-    const boxes = [];
-    for (let i = 0; i < this.state.itemList.length; i++) {
-      boxes.push(<Item post={this.postMethod}></Item>);
-    }
-    return <div>{boxes}</div>;
+    // const boxes = [];
+    // for (let i = 0; i < this.state.itemList.length; i++) {
+    //   boxes.push(<Item post={this.postMethod}></Item>);
+    // }
+    return (
+      <div>
+        <h1>Hello</h1>
+        {/* <div>{boxes}</div>; */}
+      </div>
+    );
   }
 }
 
@@ -45,4 +50,4 @@ class Item extends Component {
   }
 }
 
-render(<App />, document.getElementById("#root"));
+ReactDOM.render(<App />, document.getElementById("root"));

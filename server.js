@@ -6,6 +6,7 @@ const todoMaker = require("./controller");
 const path = require("path");
 const PORT = 3000;
 
+// you can use express.json() since bodyparser is an old version
 app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({
@@ -14,7 +15,7 @@ app.use(
 );
 // THIS PART IS NOT WORKING
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../Client/index.html"));
+  res.sendFile(path.resolve(__dirname, "index.html"));
 });
 // THIS ONE TO BE DELETED
 app.get("/todoList", (req, res) => {
